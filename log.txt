@@ -1,0 +1,46 @@
+2024-08-24 13:33:57 UTC
+Windows-10-10.0.22631
+Ren'Py 8.2.3.24061702
+
+Early init took 3.99s
+Loading error handling took 0.18s
+Loading script took 4.67s
+Loading save slot metadata took 1.42s
+Loading persistent took 0.00s
+Failed to initialize steam: Exception('Init returned false.')
+Running init code took 0.20s
+Loading analysis data took 0.04s
+Analyze and compile ATL took 0.02s
+Reloading save slot metadata took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\lunat\\AppData\\Roaming/RenPy/backups\\sugar_lie':
+Dump and make backups took 0.05s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.05s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.15s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.14s
+Running _start took 0.00s
+Interface start took 0.11s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.12'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Maximum texture size: 4096x4096
