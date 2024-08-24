@@ -10,7 +10,7 @@
 
 ## About
 
-The Miko project is a visual novel. The feature of the gameplay is the ability to communicate with the character through the choices. A special feature of the character is working with the API, a large list of phrases and variations of responses to the player, working with the OC, etc.
+Following the Light is a visual novel based on the key theme of the Everlasting Summer game. There are many new mechanics available in the game, an updated visual part and a reworking of the main plot with additions.
 
 ## Developers
 
