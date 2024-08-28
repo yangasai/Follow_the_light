@@ -14,32 +14,29 @@ Following the Light is a visual novel based on the key theme of the Everlasting 
 
 ## Gameplay
 
-<div class="viewport">
-    <div class="itemContainer">
-        <div class="item"><img src="https://i.imgur.com/Rjuj3mX.png" alt="Image 1"></div>
-        <div class="item"><img src="https://i.imgur.com/b9TQg1i.png" alt="Image 2"></div>
-        <div class="item"><img src="image3.jpg" alt="Image 3"></div>
-        <div class="item"><img src="image4.jpg" alt="Image 4"></div>
-        <div class="item"><img src="image5.jpg" alt="Image 5"></div>
-        <div class="item"><img src="image6.jpg" alt="Image 6"></div>
+<div class="viewport" style="overflow-x: auto; white-space: nowrap;">
+    <div class="itemContainer" style="display: inline-block;">
+        <div class="item" style="display: inline-block; margin-right: 10px;">
+            <img src="image1.jpg" alt="Image 1">
+        </div>
+        <div class="item" style="display: inline-block; margin-right: 10px;">
+            <img src="image2.jpg" alt="Image 2">
+        </div>
+        <div class="item" style="display: inline-block; margin-right: 10px;">
+            <img src="image3.jpg" alt="Image 3">
+        </div>
+        <div class="item" style="display: inline-block; margin-right: 10px;">
+            <img src="image4.jpg" alt="Image 4">
+        </div>
+        <div class="item" style="display: inline-block; margin-right: 10px;">
+            <img src="image5.jpg" alt="Image 5">
+        </div>
+        <div class="item" style="display: inline-block; margin-right: 10px;">
+            <img src="image6.jpg" alt="Image 6">
+        </div>
     </div>
 </div>
 
-<style>
-.viewport {
-    overflow-x: auto; /* Включает горизонтальную прокрутку */
-    white-space: nowrap; /* Запрещает перенос изображений на новую строку */
-}
-
-.itemContainer {
-    display: inline-flex; /* Позволяет элементам располагаться в ряд */
-}
-
-.item {
-    display: inline-block; /* Позволяет элементам иметь фиксированную ширину и высоту */
-    margin-right: 10px; /* Способствует отступам между изображениями */
-}
-</style>
 
 
 
