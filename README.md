@@ -13,7 +13,7 @@
 Following the Light is a visual novel based on the key theme of the Everlasting Summer game. There are many new mechanics available in the game, an updated visual part and a reworking of the main plot with additions.
 
 ## Gameplay
-<div style="overflow-x: auto; white-space: nowrap; width: 500px; height: 200px; border: 1px solid #ccc;">
+<div style="overflow-x: auto; white-space: nowrap; width: 400px; height: 100px; border: 1px solid #ccc;">
   <pre style="margin: 0;">
   <img src="https://i.imgur.com/Rjuj3mX.png"> <img src="https://i.imgur.com/WqVXF3N.png"> <img src="https://i.imgur.com/b9TQg1i.png">
   </pre>
