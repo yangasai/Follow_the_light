@@ -18,6 +18,84 @@ Following the Light is a visual novel based on the key theme of the Everlasting 
  <img src="https://i.imgur.com/Rjuj3mX.png" width="826" length="2000">
 </p>
 
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Слайдер Скриншотов</title>
+    <style>
+        .slider {
+            width: 300px; /* Ширина слайдера */
+            overflow: hidden;
+            position: relative;
+            margin: auto;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .slide {
+            min-width: 300px; /* Ширина каждого изображения */
+        }
+        img {
+            width: 100%; /* Автоширина изображений */
+            border-radius: 10px; /* Закругление углов */
+        }
+        button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+        #prev {
+            left: 10px;
+        }
+        #next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slider">
+    <div class="slides">
+        <div class="slide"><img src="screenshot1.jpg" alt="Скриншот 1"></div>
+        <div class="slide"><img src="screenshot2.jpg" alt="Скриншот 2"></div>
+        <div class="slide"><img src="screenshot3.jpg" alt="Скриншот 3"></div>
+    </div>
+    <button id="prev">Назад</button>
+    <button id="next">Вперед</button>
+</div>
+
+<script>
+    let index = 0;
+    const slides = document.querySelector('.slides');
+    const totalSlides = document.querySelectorAll('.slide').length;
+
+    document.getElementById('next').addEventListener('click', () => {
+        index = (index + 1) % totalSlides;
+        updateSlider();
+    });
+
+    document.getElementById('prev').addEventListener('click', () => {
+        index = (index - 1 + totalSlides) % totalSlides;
+        updateSlider();
+    });
+
+    function updateSlider() {
+        const offset = -index * 300; // Ширина слайда
+        slides.style.transform = `translateX(${offset}px)`;
+    }
+</script>
+
+</body>
+</html>
+
+
 There is a lot of interactivity in the game, from quests to simple transitions:
 
 <p align="center">
