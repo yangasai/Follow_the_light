@@ -25,6 +25,24 @@ Following the Light is a visual novel based on the key theme of the Everlasting 
     </div>
 </div>
 
+.viewport {
+    overflow-x: auto; /* Включаем горизонтальную прокрутку */
+    white-space: nowrap; /* Запрещаем перенос строк */
+    width: 100%; /* Ширина контейнера */
+    height: 300px; /* Высота контейнера */
+}
+
+.itemContainer {
+    display: inline-flex; /* Для горизонтального выравнивания элементов */
+}
+
+.item {
+    display: inline-block; /* Делаем элементы блочными для корректного отображения */
+    width: 200px; /* Ширина каждого элемента (можно изменить) */
+    height: 100%; /* Высота элемента */
+}
+
+
 
 ## Developers
 
