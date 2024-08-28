@@ -15,24 +15,9 @@ Following the Light is a visual novel based on the key theme of the Everlasting 
 ## Gameplay
 <div style="overflow-x: auto; white-space: nowrap;">
   <pre>
-	<img src="https://i.imgur.com/Rjuj3mX.png"> <img src="https://i.imgur.com/WqVXF3N.png"> <img src="https://i.imgur.com/b9TQg1i.png">
+  <img src="https://i.imgur.com/Rjuj3mX.png"> <img src="https://i.imgur.com/WqVXF3N.png"> <img src="https://i.imgur.com/b9TQg1i.png">
   </pre>
 </div>
-
-<div class=container>
-        <div class="block"><img src="https://i.imgur.com/Rjuj3mX.png" alt="Image 1"></div>
-        <div class="block"><img src="https://i.imgur.com/WqVXF3N.png" alt="Image 2"></div>
-        <div class="block"><img src="https://i.imgur.com/b9TQg1i.png" alt="Image 3"></div>
-</div>          
-
-<script>
-var blocks = document.getElementsByClassName('block');
-var container = document.getElementsByClassName('container');
-var hs = new HorizontalScroll.default({
-	blocks : blocks,
-	container: container,
-});
-</script>
 
 
 ## Developers
