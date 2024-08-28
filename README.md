@@ -23,12 +23,14 @@ Following the Light is a visual novel based on the key theme of the Everlasting 
         <div class="block"><img src="https://i.imgur.com/B2GEsgB.png" alt="Image 6"></div>
 </div>          
 
+<script>
 var blocks = document.getElementsByClassName('block');
 var container = document.getElementsByClassName('container');
 var hs = new HorizontalScroll.default({
 	blocks : blocks,
 	container: container,
 });
+</script>
 
 
 ## Developers
