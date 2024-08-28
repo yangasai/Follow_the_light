@@ -16,12 +16,12 @@ Following the Light is a visual novel based on the key theme of the Everlasting 
 
 <div class="viewport" style="overflow-x: auto; white-space: nowrap; border: 1px solid #ccc; padding: 10px;">
     <div class="itemContainer" style="display: inline-block;">
-        <div class="item" style="display: inline-block; margin-right: 10px;"><img src="image1.jpg" alt="Image 1"></div>
-        <div class="item" style="display: inline-block; margin-right: 10px;"><img src="image2.jpg" alt="Image 2"></div>
-        <div class="item" style="display: inline-block; margin-right: 10px;"><img src="image3.jpg" alt="Image 3"></div>
-        <div class="item" style="display: inline-block; margin-right: 10px;"><img src="image4.jpg" alt="Image 4"></div>
-        <div class="item" style="display: inline-block; margin-right: 10px;"><img src="image5.jpg" alt="Image 5"></div>
-        <div class="item" style="display: inline-block; margin-right: 10px;"><img src="image6.jpg" alt="Image 6"></div>
+        <div class="item" style="display: inline-block; margin-right: 10px;"><img src="https://i.imgur.com/B2GEsgB.png" alt="Image 1"></div>
+        <div class="item" style="display: inline-block; margin-right: 10px;"><img src="https://i.imgur.com/B2GEsgB.png" alt="Image 2"></div>
+        <div class="item" style="display: inline-block; margin-right: 10px;"><img src="https://i.imgur.com/B2GEsgB.png" alt="Image 3"></div>
+        <div class="item" style="display: inline-block; margin-right: 10px;"><img src="https://i.imgur.com/B2GEsgB.png" alt="Image 4"></div>
+        <div class="item" style="display: inline-block; margin-right: 10px;"><img src="https://i.imgur.com/B2GEsgB.png" alt="Image 5"></div>
+        <div class="item" style="display: inline-block; margin-right: 10px;"><img src="https://i.imgur.com/B2GEsgB.png" alt="Image 6"></div>
     </div>
 </div>
 
