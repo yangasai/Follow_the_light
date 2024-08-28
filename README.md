@@ -23,42 +23,7 @@ Following the Light is a visual novel based on the key theme of the Everlasting 
         <div class="item" style="display: inline-block; margin-right: 10px;"><img src="https://i.imgur.com/B2GEsgB.png" alt="Image 5"></div>
         <div class="item" style="display: inline-block; margin-right: 10px;"><img src="https://i.imgur.com/B2GEsgB.png" alt="Image 6"></div>
     </div>
-</div>
-<div id='personal-pics'>
-    <img src='https://avatanplus.com/files/resources/mid/574ac612b2daa154fc15b92d.png'style='margin-left:5px;margin-bottom:5px;' class='round'>
-    <img src='https://avatanplus.com/files/resources/mid/574ac612b2daa154fc15b92d.png'style='margin-left:5px;margin-bottom:5px;' class='round'>
-    <img src='https://avatanplus.com/files/resources/mid/574ac612b2daa154fc15b92d.png'style='margin-left:5px;margin-bottom:5px;' class='round'>
-    <img src='https://avatanplus.com/files/resources/mid/574ac612b2daa154fc15b92d.png'style='margin-left:5px;margin-bottom:5px;' class='round'>
-    <img src='https://avatanplus.com/files/resources/mid/574ac612b2daa154fc15b92d.png'style='margin-left:5px;margin-bottom:5px;' class='round'>
-    <img src='https://avatanplus.com/files/resources/mid/574ac612b2daa154fc15b92d.png'style='margin-left:5px;margin-bottom:5px;' class='round'>
-    <img src='https://avatanplus.com/files/resources/mid/574ac612b2daa154fc15b92d.png'style='margin-left:5px;margin-bottom:5px;' class='round'>
-    <img src='https://avatanplus.com/files/resources/mid/574ac612b2daa154fc15b92d.png'style='margin-left:5px;margin-bottom:5px;' class='round'>
-    <img src='https://avatanplus.com/files/resources/mid/574ac612b2daa154fc15b92d.png'style='margin-left:5px;margin-bottom:5px;' class='round'>
-    <img src='https://avatanplus.com/files/resources/mid/574ac612b2daa154fc15b92d.png'style='margin-left:5px;margin-bottom:5px;' class='round'>
-    <img src='https://avatanplus.com/files/resources/mid/574ac612b2daa154fc15b92d.png'style='margin-left:5px;margin-bottom:5px;' class='round'>
-    <img src='https://avatanplus.com/files/resources/mid/574ac612b2daa154fc15b92d.png'style='margin-left:5px;margin-bottom:5px;' class='round'>
-    <img src='https://avatanplus.com/files/resources/mid/574ac612b2daa154fc15b92d.png'style='margin-left:5px;margin-bottom:5px;' class='round'>
-    <img src='https://avatanplus.com/files/resources/mid/574ac612b2daa154fc15b92d.png'style='margin-left:5px;margin-bottom:5px;' class='round'>
-</div>
-
-#personal-pics{
-    float: left;
-    width: 845px;
-    background-color: blue;
-    height: 80px;        
-    overflow: hidden;
-    overflow-x: scroll;    
-    white-space:nowrap;
-}
-.round{
-    border-radius: 5px;
-    display: inline-block;
-    vertical-align: top;
-    width: 60px;
-    height:60px;
-    background: red;
-}
-
+</div>          
 
 
 
