@@ -14,10 +14,6 @@ Following the Light is a visual novel based on the key theme of the Everlasting 
 
 ## Gameplay
 
-<p align="center">
- <img src="https://i.imgur.com/Rjuj3mX.png" width="826" length="2000">
-</p>
-
 <div class="viewport">
     <div class="itemContainer">
         <div class="item"><img src="https://i.imgur.com/Rjuj3mX.png" alt="Image 1"></div>
@@ -29,16 +25,6 @@ Following the Light is a visual novel based on the key theme of the Everlasting 
     </div>
 </div>
 
-
-There is a lot of interactivity in the game, from quests to simple transitions:
-
-<p align="center">
- <img src="https://i.imgur.com/b9TQg1i.png" width="826" length="2000">
-</p>
-
-<p align="center">
- <img src="https://i.imgur.com/WqVXF3N.png" width="826" length="2000">
-</p>
 
 ## Developers
 
