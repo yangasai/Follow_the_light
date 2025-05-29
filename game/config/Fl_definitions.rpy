@@ -561,21 +561,9 @@ init -150 python in Fl:
                         store.Fl_inventory[slot] = {"slot":slot, "name":id if type == "add" else "empty", "stats":stats if type == "add" else None}
                         break
             elif type == "add":
-                dict = {"easy":[4, 8, "1/5"], "average":[8, 14, "2/5"], "big":[14, 20, "3/5"], "very_big":[20, 26, "4/5"], "enormous":[26, 32, "5/5"]}
+                dict = {"average":[8, 14, "2/5"], "big":[14, 20, "3/5"], "very_big":[20, 26, "4/5"], "enormous":[26, 32, "5/5"]}
                 store.Fl_backpack = {"slot":"BPK", "name":id, "stats":{"q":dict[id][2], "c":dict[id][1]-4}}
-                if message:
-                    store.Fl.PlaySound("Fl_curtains")
                 store.Fl.InventorySlots("empty", dict[id][0], dict[id][1])
-                if id == "easy":
-                    store.Fl.Item(store.Fl_inventory[0]["name"], message=None)
-                    store.Fl.Item(store.Fl_inventory[1]["name"], message=None)
-                    store.Fl.Item(store.Fl_inventory[2]["name"], message=None)
-                    store.Fl.Item(store.Fl_inventory[3]["name"], store.Fl_inventory[3]["stats"], message=None)
-                    store.Fl.InventorySlots("empty", 0, 4)
-            elif id == "easy":
-                store.Fl_backpack = {"slot":"BPK", "name":"empty", "stats":None}
-                store.Fl.PlaySound("Fl_curtains")
-                store.Fl.InventorySlots("lock", 4, 8)
             if message:
                 renpy.music.play("gui/main_menu/Fl_" + ("new_item" if type == "add" else "lock") + ".ogg", "sound")
                 renpy.hide_screen("Fl_new_item")
@@ -590,10 +578,7 @@ init -150 python in Fl:
 
     def ItemDescription(name):
         dict = {"phone": "",
-                "matches":"",
                 "flashlight":"",
-                "knife":"",
-                "easy":"",
                 "key13":"",
                 "brush":"",
                 "dentifrice":"",
@@ -642,19 +627,3 @@ init -150 python in Fl:
 
     def GlobalDict(name, key, value):
         getattr(store, name)[key] = value
-
-
-    def Message(name):
-            dict = {
-                "inventory":[
-                    "Теперь вам доступен инвентарь!",
-                    "Инвентарь вы сможете пополнять по ходу игры различными вещами, которые могут понадобиться вам по сюжету.", ""],
-                "backpack":[
-                    "Вы получили рюкзак!",
-                    "Рюкзак позволяют вам носить гораздо больше вещей с собой, открывая большее количество ячеек в инвентаре.", ""],
-                "status":[
-                    "{size=-4}Теперь вам доступно влияние на состояние!{/size}",
-                    "Все поступки и реплики героя зависят исключительно от его состояния. Само же состояние в основном меняется в зависимости от происходящих вокруг ситуаций, но и также от принятых вами выборов."]}
-            store.Fl.NormalScreens(False)
-            store.Fl.PlaySound("Fl_lock")
-            renpy.call_screen("Fl_message", name, dict[name][0], dict[name][1])

@@ -25,7 +25,7 @@ init -15 python:
     ]
     QTE_image_list_l = ["shadowaction", "shadowaction1", "shadowaction2", "shadowaction3", "shadowaction4", "shadowaction5", "shadowaction6", "shadowaction7"]
 
-    Fl_items_dict = {"phone":"Старый телефон", "matches":"Спички", "flashlight":"Фонарик", "knife":"Кухонный нож", "easy":"Лёгкий рюкзак", "key13":"Ключ от 13-го домика", "brush":"Щётка", "dentifrice":"Зубной порошок", "keydoor":"Ключ от домика вожатой", "keypr":"Ключ от склада.", "headphones":"Наушники", "bag":"Пакет"}
+    Fl_items_dict = {"phone":"Старый телефон", "flashlight":"Фонарик", "easy":"Лёгкий рюкзак", "key13":"Ключ от 13-го домика", "brush":"Щётка", "dentifrice":"Зубной порошок", "keydoor":"Ключ от домика вожатой", "keypr":"Ключ от склада.", "headphones":"Наушники", "bag":"Пакет"}
     Fl_reusable_items_list = ["key13", "brush", "keydoor", "dentifrice", "keypr"]
     Fl_key_dismiss_list = ["K_MENU", "K_ESCAPE", "dismiss", "button_select", "input_enter", "bar_activate", "bar_deactivate", "mouseup_1", "mouseup_3", "K_SPACE"]
     Fl_names_list = []
@@ -33,7 +33,6 @@ init -15 python:
     Fl_key_i_list = ["i", "I", "ш", "Ш"]
     Fl_ordinary_items_list = []
     Fl_backpacks_list = ["easy"]
-    Fl_weapons_list = ["knife"]
 
     config.layers = ["underlay", "master", "mapoverlay", "widgetoverlay", "transient", "screens", "front", "overlay", "onlyverlay"]
     renpy.music.register_channel("ambience","voice",loop=True,tight=True) 
@@ -72,4 +71,4 @@ init -15 python:
         "бл*":"блин", "х*ре":"хватит", "п*зданул":"ударил", "х*ёвый":"плохой",
         "БЛ*":"БЛИИН", "Них*я":"Нифига", "за*бала":"достала", "х*йню":"ерунду",
         "ах*е":"шоке", "нихр*на":"ничего", "про*бал":"потерял", "за*бало":"достало",
-        "С*КА":"ТВАРЬ"}
+        "С*КА":"ТВАРЬ", "х*р":"чёрт"}

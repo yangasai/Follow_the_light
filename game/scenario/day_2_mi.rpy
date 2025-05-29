@@ -4030,7 +4030,7 @@ label day_2_mi_proda:
     scene bg Fl_int_house_of_mv_sunset:
         Fl_bg_zoom_th(1.0, 1.5, 1.5, 0.5, 0.2, 0.5, 0.55)
     $ Fl.Pause (1.5)
-    $ Fl.PlaySound("Fl_bed_squeak1", 1, 0, False)
+    $ Fl.PlaySound("Fl_bed_squeak", 1, 0, False)
     $ Fl.AttackMaster(False)
     $ Fl.say(Fl_r, "Я присел на середину левой кровати. Потому что если я не ошибаюсь, то кровать напротив принадлежит вожатой. На мои выводы рассуждения намекает ещё белый лифчик, одиноко свысавший на перилах.")
     
@@ -4039,7 +4039,7 @@ label day_2_mi_proda:
     $ Fl.Status("dream", False)
     $ Fl.say(Fl_r, "Неожиданно всё моё тело обмякло. {w}Только сейчас я смог осознать, что полностью вымотался. Сил совсем не было. Каждая частичка моего дряхлого тела молила об отдыхе. И как назло кровать стала неестесвенно мягкой, словно пух.")
     
-    $ Fl.PlaySound("Fl_bed_squeak1", 1, 0, False)
+    $ Fl.PlaySound("Fl_bed_squeak", 1, 0, False)
     $ Fl.say(Fl_r, "Подняв белый флаг перед сонливостью, я улёгся на кровать.")
     $ Fl.HideScreens(_with=Fl_fast)
 
@@ -4943,7 +4943,7 @@ label day_2_mi_proda:
     scene bg Fl_int_house_of_mi_sunset:
         Fl_bg_zoom_th(1.0, 1.5, 1.5, 0.5, 0.2, 0.5, 0.55)
     $ Fl.Pause(1.5)
-    $ Fl.PlaySound("Fl_bed_squeak1", 1, 0, False)
+    $ Fl.PlaySound("Fl_bed_squeak", 1, 0, False)
     $ Fl.AttackMaster(False)
     $ Fl.say(Fl_r, "Я проигнорировал вопрос голоса и молча прилёг на кровать.")
 
@@ -4995,7 +4995,7 @@ label day_2_mi_proda:
 
     $ Fl.Master(Fl_bg_zoom_otd(1.5, 1.0, 1.5, 0.2, 0.5, 0.55, 0.5))
     $ Fl.Pause(1.5)
-    $ Fl.PlaySound("Fl_bed_squeak1", 1, 0, False)
+    $ Fl.PlaySound("Fl_bed_squeak", 1, 0, False)
     $ Fl.Status("+20")
     $ Fl.Status("normal", False)
     $ Fl.say(Fl_gg, "Ладно, пофиг что будет. Надо наслаждаться моментом. Своей жизни что ли не хватило на размышляния о «важном».")

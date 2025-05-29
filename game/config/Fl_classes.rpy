@@ -43,28 +43,7 @@ init python:
                 else:
                     Hide("Fl_inventory_message")()
                     Show("Fl_inventory_message")()
-                    if Fl_hover_slot["name"] in Fl_weapons_list:
-                        if Fl_weapon["name"] == "lock":
-                            SetVariable("Fl_inventory_message", "Оружие в настоящее время нет необходимости использовать.")()
-                            Play("sound", "gui/main_menu/Fl_lock.ogg")()
-                        else:
-                            SetVariable("Fl_weapon", Fl_inventory[Fl_inventory.index(Fl_hover_slot)])()
-                            Function(Fl.Item, Fl_hover_slot["name"], Fl_hover_slot["stats"], "remove", None)()
-                            SetDict(Fl_weapon, "slot", "WPG")()
-                            SetVariable("Fl_hover_slot", {"name":"empty", "slot":None, "stats":None})()
-                    else:
-                        SetVariable("Fl_inventory_message", "Этот предмет нельзя здесь применить.")()
-                        Play("sound", "gui/main_menu/Fl_lock.ogg")()
 
-        
-        class Fl_Message(Action):
-            def __init__(self, text):
-                self.text = text
-            def __call__(self):
-                Hide("Fl_inventory_message")()
-                Show("Fl_inventory_message")()
-                SetVariable("Fl_inventory_message", self.text)()
-                Play("sound", "gui/main_menu/Fl_lock.ogg")()
 
 
         class Fl_ShowItem(Action, DictEquality):

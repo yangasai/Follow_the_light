@@ -7,11 +7,12 @@ init -1 python hide:
     config.window_title = u"Following the light"
 
     config.name = "Following the light"
-    config.version = "1.2"
+    config.version = "1.3"
 
     config.window_icon = "gui/window_icon.png"
 
     config.mouse = { }
+    config.language = "ru"
     config.mouse["default"] = [
         ("gui/cursor.png",  0, 0)
 
@@ -19,14 +20,14 @@ init -1 python hide:
 
     _game_menu_screen = "game_menu_selector"
 
-define config.name = _("Sugar Lie")
+define config.name = _("Following the light")
 
 
 ## Определяет, показывать ли заголовок, данный выше, на экране главного меню.
 ## Установите на False, чтобы спрятать заголовок.
 
 define gui.show_name = False
-
+define config.default_language = "russian"
 
 
 define gui.about = _p("""
@@ -37,7 +38,7 @@ define gui.about = _p("""
 ## постройке дистрибутивов. Оно должно содержать текст формата ASCII и не должно
 ## содержать пробелы, двоеточия и точки с запятой.
 
-define build.name = "SugarLie"
+define build.name = "Following the light"
 
 
 ## Звуки и музыка ##############################################################

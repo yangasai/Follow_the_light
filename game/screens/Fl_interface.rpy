@@ -132,18 +132,19 @@ screen say:
 
 #Сейвы
 screen Fl_save():
-    tag menu
     modal True
+
+    add "Fl_prolog_dream" at Fl_alpha(0.15)
     add "gui/quick_menu_zad.png"
-    fixed yoffset 0 at Fl_menu_move:
-        add "gui/main_menu/save/save_background.png"
+    fixed yoffset 120 xoffset 270 at Fl_menu_move(0.9, 0.5, 0):
+            add "gui/main_menu/save/save_background.png"
 
     fixed align (0.5, 0.5) anchor (0.5, 0.5) at Fl_menu_move(0.7, 0.5, 0):
         text ["{font=[Fl_Script]}Сохранить{/font}"]:
             size 70
             text_align 0.5
             xalign 0.5
-            yalign 0.005
+            yalign 0.08
             antialias True
             kerning 2
         textbutton "<":
@@ -151,17 +152,17 @@ screen Fl_save():
             style "Fl_button_None"
             text_style "Fl_text_setting_s"
             text_size 60
-            xalign 0.34
-            yalign 0.01
-            action ShowMenu("load")
+            xalign 0.36
+            yalign 0.08
+            action [Hide("Fl_save", Dissolve(0.5)), ShowMenu("load")]
         textbutton ">":
             hover_sound "gui/main_menu/Fl_click_menu.mp3"
             style "Fl_button_None"
             text_style "Fl_text_setting_s"
             text_size 60
-            xalign 0.65
-            yalign 0.01
-            action ShowMenu("preferences")
+            xalign 0.64
+            yalign 0.08
+            action [Hide("Fl_save", Dissolve(0.5)), ShowMenu("preferences")]
         textbutton ["Сохранить игру"]:
             hover_sound "gui/main_menu/Fl_click_menu.mp3"
             text_style "Fl_text_big_save_load"
@@ -176,7 +177,7 @@ screen Fl_save():
             text_style "Fl_text_big_save_load"
             style "Fl_button_None"
             text_size 55
-            xpos 1470
+            xpos 1450
             ypos 950
             action FileDelete(selected_slot)
         textbutton ["Назад"]:
@@ -184,26 +185,27 @@ screen Fl_save():
             text_style "Fl_text_big_save_load"
             style "Fl_button_None"
             text_size 55
-            xpos 200
+            xpos 290
             ypos 950
-            action [Hide("Fl_save", Dissolve(1.0)), Return()]
+            action Hide("Fl_save", Dissolve(0.5))
     use Fl_save_load_slots
         
 
 #Загрузка
 screen load():
-    tag menu
     modal True
+
+    add "Fl_prolog_dream" at Fl_alpha(0.15)
     add "gui/quick_menu_zad.png"
-    fixed yoffset 0 at Fl_menu_move:
-        add "gui/main_menu/save/save_background.png"
+    fixed yoffset 120 xoffset 270 at Fl_menu_move(0.9, 0.5, 0):
+            add "gui/main_menu/save/save_background.png"
 
     fixed align (0.5, 0.5) anchor (0.5, 0.5) at Fl_menu_move(0.7, 0.5, 0):
         text ["{font=[Fl_Script]}Загрузить{/font}"]:
             size 70
             text_align 0.5
             xalign 0.5
-            yalign 0.005
+            yalign 0.08
             antialias True
             kerning 2
         textbutton "<":
@@ -211,17 +213,17 @@ screen load():
             style "Fl_button_None"
             text_style "Fl_text_setting_s"
             text_size 60
-            xalign 0.34
-            yalign 0.01
-            action ShowMenu("preferences")
+            xalign 0.36
+            yalign 0.08
+            action [Hide("load", Dissolve(0.5)), ShowMenu("preferences")]
         textbutton ">":
             hover_sound "gui/main_menu/Fl_click_menu.mp3"
             style "Fl_button_None"
             text_style "Fl_text_setting_s"
             text_size 60
-            xalign 0.65
-            yalign 0.01
-            action ShowMenu("Fl_save")
+            xalign 0.64
+            yalign 0.08
+            action [Hide("load", Dissolve(0.5)), ShowMenu("Fl_save")]
 
         textbutton ["Загрузить игру"]:
             hover_sound "gui/main_menu/Fl_click_menu.mp3"
@@ -229,14 +231,14 @@ screen load():
             style "Fl_button_None"
             text_size 55
             ypos 950
-            xalign 0.5
+            xalign 0.51
             action (Fl_FunctionCallback(Fl.CallbackOnLoad, selected_slot), FileLoad(selected_slot))
         textbutton ["Удалить"]:
             hover_sound "gui/main_menu/Fl_click_menu.mp3"
             text_style "Fl_text_big_save_load"
             style "Fl_button_None"
             text_size 55
-            xpos 1470
+            xpos 1450
             ypos 950
             action FileDelete(selected_slot)
         textbutton ["Назад"]:
@@ -244,207 +246,221 @@ screen load():
             text_style "Fl_text_big_save_load"
             style "Fl_button_None"
             text_size 55
-            xpos 200
+            xpos 290
             ypos 950
-            action [Hide("load", Dissolve(1.0)), Return()]
+            action Hide("load", Dissolve(0.5))
     use Fl_save_load_slots
     
 
 
 #Настройки
 screen preferences():
-    tag menu
     modal True
-    add "gui/quick_menu_zad.png"
-    fixed yoffset 0 at Fl_menu_move:
-        add "gui/main_menu/save/save_background.png"
 
-    add "gui/main_menu/preferences/Fl_preference_osn.png" at Fl_menu_move(0.68, 0.165, 0)
+    add "Fl_prolog_dream" at Fl_alpha(0.15)
+    add "gui/quick_menu_zad.png"
+    fixed yoffset 120 xoffset 270 at Fl_menu_move(0.9, 0.5, 0):
+            add "gui/main_menu/save/save_background.png"
 
     fixed align (0.5, 0.5) anchor (0.5, 0.5) at Fl_menu_move(0.7, 0.5, 0):
+        text ["{font=[Fl_Script]}Настройки{/font}"]:
+            size 70
+            text_align 0.5
+            xalign 0.5
+            yalign 0.08
+            antialias True
+            kerning 2
+            
         textbutton "<":
             hover_sound "gui/main_menu/Fl_click_menu.mp3"
             style "Fl_button_None"
             text_style "Fl_text_setting_s"
             text_size 60
-            xalign 0.34
-            yalign 0.01
-            action ShowMenu("Fl_save")
+            xalign 0.36
+            yalign 0.08
+            action [Hide("preferences", Dissolve(0.5)), ShowMenu("Fl_save")]
         textbutton ">":
             hover_sound "gui/main_menu/Fl_click_menu.mp3"
             style "Fl_button_None"
             text_style "Fl_text_setting_s"
             text_size 60
-            xalign 0.65
-            yalign 0.01
-            action ShowMenu("load")
+            xalign 0.64
+            yalign 0.08
+            action [Hide("preferences", Dissolve(0.5)), ShowMenu("load")]
 
-    add "gui/main_menu/preferences/Fl_rezim_osn.png":
-        zoom 0.65 xpos 485 ypos 280
-
-    if not _preferences.fullscreen:
-        imagebutton:
-            xalign 0.43 yalign 0.33 yoffset 0
-            idle ("gui/main_menu/preferences/Fl_window_hover.png")
-            hover ("gui/main_menu/preferences/Fl_window_hover.png")
-        imagebutton:
-            xalign 0.26 yalign 0.33 yoffset 0
-            auto "gui/main_menu/preferences/Fl_fullscreen_%s.png"
-            hover_sound "gui/main_menu/Fl_click_menu.mp3"
-            action (Preference("display", "fullscreen"))
-    else:
-        imagebutton:
-            xalign 0.43 yalign 0.33 yoffset 0
-            auto "gui/main_menu/preferences/Fl_window_%s.png"
-            hover_sound "gui/main_menu/Fl_click_menu.mp3"
-            action (Preference("display", "window"))
-        imagebutton:
-            xalign 0.26 yalign 0.33 yoffset 0
-            idle ("gui/main_menu/preferences/Fl_fullscreen_hover.png")
-            hover ("gui/main_menu/preferences/Fl_fullscreen_hover.png")
-
-
-    add "gui/main_menu/preferences/Fl_filtr_osn.png": 
-        zoom 0.65 xpos 480 ypos 405
-        
-    if persistent.Fl_swear_filter == True:
-        imagebutton:
-            xpos 367 ypos 476
-            idle ("gui/main_menu/preferences/Fl_on_hover.png")
-            hover ("gui/main_menu/preferences/Fl_on_hover.png")
-            action (SetField(persistent, "Fl_swear_filter", True))
-    
-        imagebutton:
-            xpos 673 ypos 476
-            auto "gui/main_menu/preferences/Fl_off_%s.png"
-            hover_sound "gui/main_menu/Fl_click_menu.mp3"
-            action (SetField(persistent, "Fl_swear_filter", False))
-        
-    else:
-        imagebutton:
-            xpos 367 ypos 476
-            auto "gui/main_menu/preferences/Fl_on_%s.png"
-            hover_sound "gui/main_menu/Fl_click_menu.mp3"
-            action (SetField(persistent, "Fl_swear_filter", True))
-        imagebutton:
-            xpos 673 ypos 476
-            idle ("gui/main_menu/preferences/Fl_off_hover.png")
-            hover ("gui/main_menu/preferences/Fl_off_hover.png")
-    
-
-    add "gui/main_menu/preferences/Fl_skip_menu.png":
-        zoom 0.65 xpos 485 ypos 545
-        
-    if not _preferences.skip_unseen:
-        imagebutton:
-            xalign 0.363 yalign 0.585 yoffset 0
-            idle ("gui/main_menu/preferences/Fl_readed_hover.png")
-            hover ("gui/main_menu/preferences/Fl_readed_hover.png")
-        imagebutton:
-            xalign 0.233 yalign 0.585 yoffset 0
-            auto "gui/main_menu/preferences/Fl_all_%s.png"
-            hover_sound "gui/main_menu/Fl_click_menu.mp3"
-            action (Preference("skip", "all"))
-    else:
-        imagebutton:
-            xalign 0.363 yalign 0.585 yoffset 0
-            auto "gui/main_menu/preferences/Fl_readed_%s.png"
-            hover_sound "gui/main_menu/Fl_click_menu.mp3"
-            action (Preference("skip", "seen"))
-        imagebutton:
-            xalign 0.233 yalign 0.585 yoffset 0
-            idle ("gui/main_menu/preferences/Fl_all_hover.png")
-            hover ("gui/main_menu/preferences/Fl_all_hover.png")
-
-
-    add "gui/main_menu/preferences/Fl_podsk_osn.png":
-        zoom 0.65 xpos 485 ypos 685
-        
-    if persistent.Fl_podsk_count == True:
-        imagebutton:
-            xpos 380 ypos 746
-            idle ("gui/main_menu/preferences/Fl_on2_hover.png")
-            hover ("gui/main_menu/preferences/Fl_on2_hover.png")
-        imagebutton:
-            xpos 667 ypos 746
-            auto "gui/main_menu/preferences/Fl_off2_%s.png"
-            hover_sound "gui/main_menu/Fl_click_menu.mp3"
-            action (SetField(persistent, "Fl_podsk_count", False))
-    else:
-        imagebutton:
-            xpos 380 ypos 746
-            auto "gui/main_menu/preferences/Fl_on2_%s.png"
-            hover_sound "gui/main_menu/Fl_click_menu.mp3"
-            action (SetField(persistent, "Fl_podsk_count", True))
-        imagebutton:
-            xpos 667 ypos 746
-            idle ("gui/main_menu/preferences/Fl_off2_hover.png")
-            hover ("gui/main_menu/preferences/Fl_off2_hover.png")
-
-
-    add "gui/main_menu/preferences/Fl_music_menu.png":
-        zoom 0.68 xpos 1150 ypos 278    
-    bar:
-        value Preference("music volume")
-        right_bar "gui/main_menu/preferences/Fl_scale_chist.png"
-        left_bar "gui/main_menu/preferences/Fl_scale_poln.png"
-        thumb "gui/main_menu/preferences/Fl_begunok.png"
-        xpos 1061
-        ypos 333
-        xmaximum 365
-        ymaximum 70
-
-
-    add "gui/main_menu/preferences/Fl_sound_menu.png":
-        zoom 0.72 xpos 1140 ypos 413
-    bar:
-        value Preference("sound volume")
-        right_bar "gui/main_menu/preferences/Fl_scale_chist.png"
-        left_bar "gui/main_menu/preferences/Fl_scale_poln.png"
-        thumb "gui/main_menu/preferences/Fl_begunok.png"
-        xpos 1061
-        ypos 477
-        xmaximum 365
-        ymaximum 70
-
-
-    add "gui/main_menu/preferences/Fl_ambience_menu.png":
-        zoom 0.7 xpos 1151 ypos 562 
-    bar:
-        value Preference("voice volume")
-        right_bar "gui/main_menu/preferences/Fl_scale_chist.png"
-        left_bar "gui/main_menu/preferences/Fl_scale_poln.png"
-        thumb "gui/main_menu/preferences/Fl_begunok.png"
-        xpos 1061
-        ypos 621
-        xmaximum 365
-        ymaximum 70
-
-    
-    add "gui/main_menu/preferences/Fl_text_menu.png":
-        zoom 0.7 xpos 1151 ypos 711 
-    bar:
-        value Preference("text speed")
-        right_bar "gui/main_menu/preferences/Fl_scale_chist.png"
-        left_bar "gui/main_menu/preferences/Fl_scale_poln.png"
-        thumb "gui/main_menu/preferences/Fl_begunok.png"
-        xpos 1061
-        ypos 765
-        xmaximum 365
-        ymaximum 70
-    
-
-
-    fixed align (0.5, 0.5) anchor (0.5, 0.5) at Fl_menu_move(1.0, 0.5, 0):
         textbutton ["Назад"]:
             hover_sound "gui/main_menu/Fl_click_menu.mp3"
-            text_style "Fl_text_setting" style "Fl_button_None"
-            pos (423, 830) action [Hide("preferences", Dissolve(1.0)), Return()]
+            text_style "Fl_text_big_save_load"
+            style "Fl_button_None"
+            text_size 55
+            xpos 290
+            ypos 950
+            action Hide("preferences", Dissolve(0.5))
+
+    vbox:
+        align (0.33, 0.5)
+        spacing 25
+
+        vbox xalign 0.5:
+            text "Режим экрана" xalign 0.5:
+                font Fl_Script size 40
+                antialias True
+                outlines [(1, "#000000", 0, 0)]
+
+            hbox:
+                xalign 0.5
+                spacing 35
+
+                if not _preferences.fullscreen:
+                    textbutton "В окне" at Fl_menu_hover:
+                        action None
+                    textbutton "На весь экран" at Fl_menu_hover:
+                        hover_sound "gui/main_menu/Fl_click_menu.mp3"
+                        action (Preference("display", "fullscreen"))
+                else:
+                    textbutton "В окне" at Fl_menu_hover:
+                        hover_sound "gui/main_menu/Fl_click_menu.mp3"
+                        action (Preference("display", "window"))
+                    textbutton "На весь экран" at Fl_menu_hover:
+                        action None
+
+
+        vbox xalign 0.5:
+            text "Фильтр мата" xalign 0.5:
+                font Fl_Script size 40
+                antialias True
+                outlines [(1, "#000000", 0, 0)]
+
+            hbox:
+                xalign 0.5
+                spacing 35
+
+                if persistent.Fl_swear_filter == True:
+                    textbutton "Включить" at Fl_menu_hover:
+                        action None
+                
+                    textbutton "Выключить" at Fl_menu_hover:
+                        hover_sound "gui/main_menu/Fl_click_menu.mp3"
+                        action (SetField(persistent, "Fl_swear_filter", False))
+                    
+                else:
+                    textbutton "Включить" at Fl_menu_hover:
+                        hover_sound "gui/main_menu/Fl_click_menu.mp3"
+                        action (SetField(persistent, "Fl_swear_filter", True))
+                    textbutton "Выключить" at Fl_menu_hover:
+                        action None
+    
+
+        vbox xalign 0.5:
+            text "Пропуск текста" xalign 0.5:
+                font Fl_Script size 40
+                antialias True
+                outlines [(1, "#000000", 0, 0)]
+                    
+            hbox:
+                xalign 0.5
+                spacing 35
+
+                if not _preferences.skip_unseen:
+                    textbutton "Только прочитанное" at Fl_menu_hover:
+                        action None
+                    textbutton "Всё" at Fl_menu_hover:
+                        hover_sound "gui/main_menu/Fl_click_menu.mp3"
+                        action (Preference("skip", "all"))
+                else:
+                    textbutton "Только прочитанное" at Fl_menu_hover:
+                        hover_sound "gui/main_menu/Fl_click_menu.mp3"
+                        action (Preference("skip", "seen"))
+                    textbutton "Всё" at Fl_menu_hover:
+                        action None
+
+        vbox xalign 0.5:
+            text "Подсказки" xalign 0.5:
+                font Fl_Script size 40
+                antialias True
+                outlines [(1, "#000000", 0, 0)]
+
+            hbox:
+                xalign 0.5
+                spacing 35
+
+                if persistent.Fl_podsk_count == True:
+                    textbutton "Включить" at Fl_menu_hover:
+                        action None
+                    textbutton "Выключить" at Fl_menu_hover:
+                        hover_sound "gui/main_menu/Fl_click_menu.mp3"
+                        action (SetField(persistent, "Fl_podsk_count", False))
+                        
+                else:
+                    textbutton "Включить" at Fl_menu_hover:
+                        hover_sound "gui/main_menu/Fl_click_menu.mp3"
+                        action (SetField(persistent, "Fl_podsk_count", True))
+                    textbutton "Выключить" at Fl_menu_hover:
+                        action None
+
+
+    vbox:
+        align (0.69, 0.53)
+        spacing 25
+
+        vbox xalign 0.5:
+            text "Текст" xalign 0.5:
+                font Fl_Script size 40
+                antialias True
+                outlines [(1, "#000000", 0, 0)]
+            bar:
+                value Preference("text speed")
+                right_bar "gui/main_menu/preferences/Fl_scale_chist.png"
+                left_bar "gui/main_menu/preferences/Fl_scale_poln.png"
+                thumb "gui/main_menu/preferences/Fl_begunok.png"
+                xmaximum 365
+                ymaximum 60
+
+        vbox xalign 0.5:
+            text "Музыка" xalign 0.5:
+                font Fl_Script size 40
+                antialias True
+                outlines [(1, "#000000", 0, 0)] 
+            bar:
+                value Preference("music volume")
+                right_bar "gui/main_menu/preferences/Fl_scale_chist.png"
+                left_bar "gui/main_menu/preferences/Fl_scale_poln.png"
+                thumb "gui/main_menu/preferences/Fl_begunok.png"
+                xmaximum 365
+                ymaximum 60
+
+        vbox xalign 0.5:
+            text "Звуки" xalign 0.5:
+                font Fl_Script size 40
+                antialias True
+                outlines [(1, "#000000", 0, 0)]
+            bar:
+                value Preference("sound volume")
+                right_bar "gui/main_menu/preferences/Fl_scale_chist.png"
+                left_bar "gui/main_menu/preferences/Fl_scale_poln.png"
+                thumb "gui/main_menu/preferences/Fl_begunok.png"
+                xmaximum 365
+                ymaximum 60
+
+        vbox xalign 0.5:
+            text "Эмбиент" xalign 0.5:
+                font Fl_Script size 40
+                antialias True
+                outlines [(1, "#000000", 0, 0)]
+            bar:
+                value Preference("voice volume")
+                right_bar "gui/main_menu/preferences/Fl_scale_chist.png"
+                left_bar "gui/main_menu/preferences/Fl_scale_poln.png"
+                thumb "gui/main_menu/preferences/Fl_begunok.png"
+                xmaximum 365
+                ymaximum 60
+
+
 
 
 #История
-define config.history_length = 100
-define gui.history_height = 1100
+define config.history_length = 70
+define gui.history_height = 610
 define gui.history_name_xpos = 0
 define gui.history_name_ypos = 0
 define gui.history_name_width = 0
@@ -456,48 +472,56 @@ define gui.history_text_xalign = 0.0
 define gui.scrollbar_size = 18
 
 screen history():
-    tag menu
+    modal True
     predict False
+    add "Fl_prolog_dream" at Fl_alpha(0.15)
     add "gui/quick_menu_zad.png"
+    fixed yoffset 120 xoffset 270 at Fl_menu_move(0.9, 0.5, 0):
+            add "gui/main_menu/save/save_background.png"
     
-    $ xmax = 1600
-    $ xposition = 100
+    $ xmax = 1250
+    $ xposition = 95
 
 
-    button style "blank_button" xpos 0 ypos 0 action Return():
-        xfill True
-        yfill True
+    text "{font=[Fl_Script]}История:{/font}" size 70 at Fl_menu_move(0.7, 0.2, 0)
 
-    window background Frame("gui/main_menu/history/choice_box.png",50,50) top_padding 33 bottom_padding 40 at Fl_bg_zoom_th:
+    window top_padding 33 bottom_padding 40 at Fl_menu_move:
         xfill True
         ysize gui.history_height
-        viewport id "text_history_screen":
-            draggable True
-            mousewheel True
-            scrollbars None
-            yinitial 1.0
-            has vbox
-            for history in _history_list:
-                if history.who:
-                    text history.who:
-                        font "font/Fl_mainmenu.ttf"
-                        pos (50, 0)
-                        size 29
-                        if "color" in history.who_args:
-                            color history.who_args["color"]
-                textbutton history.what:
-                    style "log_button"
-                    text_font "font/Fl_font.ttf"
-                    text_size 28
-                    xmaximum 1550
-                    xpos 50
-                    
-                    
-        vbar:
-            value YScrollValue("text_history_screen")
-            bottom_bar Frame("gui/main_menu/history/vbar_nofull.png",0,0)
-            top_bar Frame("gui/main_menu/history/vbar_full.png",0,0)
-            thumb "gui/main_menu/history/thumb.png"
-            thumb_offset 10
-            ymaximum 800
-            align (0.97, 0.49)
+
+        fixed align (0.5, 0.5) anchor (0.5, 0.5) at Fl_menu_move(0.93, 0.5, 0):
+            viewport id "text_history_screen":
+                draggable True
+                mousewheel True
+                scrollbars None
+                yinitial 1.0
+                has vbox
+                for history in _history_list:
+                    if history.who:
+                        text history.who:
+                            font "font/Fl_mainmenu.ttf"
+                            pos (450, 0)
+                            size 27
+                            if "color" in history.who_args:
+                                color history.who_args["color"]
+                    textbutton history.what:
+                        style "log_button"
+                        text_font "font/Fl_font.ttf"
+                        text_size 25
+                        xmaximum 1070
+                        pos (450, 0)
+                        
+            vbar:
+                value YScrollValue("text_history_screen")
+                bottom_bar Frame("gui/main_menu/history/vbar_nofull.png",0,0)
+                top_bar Frame("gui/main_menu/history/vbar_full.png",0,0)
+                thumb "gui/main_menu/history/thumb.png"
+                thumb_offset 10
+                ymaximum 800
+                align (0.795, 0.49)
+
+    fixed align (0.5, 0.5) anchor (0.5, 0.5) at Fl_menu_move(1.0, 0.5, 0):
+        textbutton ["Назад"]:
+            hover_sound "gui/main_menu/Fl_click_menu.mp3"
+            text_style "Fl_text_setting" style "Fl_button_None"
+            pos (485, 835) action Hide("history", Dissolve(0.5))

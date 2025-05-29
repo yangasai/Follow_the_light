@@ -1,7 +1,8 @@
-﻿
+﻿# TODO: Translation updated at 2025-05-16 00:51
+
 translate russian strings:
 
-    # options.rpy:15
-    old "Ren'Py Tutorial Game"
-    new "Обучающая игра Ren'Py"
+    # game/options.rpy:23
+    old "Following the light"
+    new ""
 

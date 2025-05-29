@@ -17,7 +17,7 @@ transform Fl_zoom(z, x, y):
     zoom z xpos x ypos y
 
 transform Fl_zoom_pr(z):
-    zoom z
+    zoom z subpixel True
 
 transform Fl_xalign(x):
     xalign x subpixel True
@@ -30,6 +30,14 @@ transform Fl_xoffset(x):
 
 transform Fl_yoffset(y):
     yoffset y subpixel True
+
+transform Fl_at_dissolve(a, aa):
+    subpixel True
+    alpha 0.0
+    on show:
+        ease a alpha 1.0
+    on hide:
+        ease aa alpha 0.0
 
 
 
@@ -156,13 +164,7 @@ transform Fl_loading_bg_move:
         ease 3.0 alpha 1.0
     parallel:
         ease 15.0 xalign 1.0
-        
 
-transform Fl_menu_rotate_min:
-    subpixel True
-    ease 2.5 rotate 0.0 alpha 1.0
-    ease 2.5 rotate 0.0 alpha 1.0
-    repeat
 
 transform Fl_choice_anim:
     xalign 0.5 yalign 0.4 alpha 0.0
@@ -170,8 +172,8 @@ transform Fl_choice_anim:
 
 transform Fl_menu_rotate:
     subpixel True
-    ease 2.5 rotate 3.2 alpha 1.0
-    ease 2.5 rotate -3.2 alpha 1.0
+    ease 3.5 rotate 2.5 alpha 1.0
+    ease 3.5 rotate -2.5 alpha 1.0
     repeat
 
 transform Fl_menu_hover:
@@ -188,6 +190,15 @@ transform Fl_strel_zoom1:
 transform Fl_strel_zoom2:
         subpixel True
         zoom 0.81 xpos 15 ypos 500
+
+
+transform Fl_strel_zoom3:
+    subpixel True
+    zoom 0.72
+
+transform Fl_strel_zoom4:
+    subpixel True
+    zoom 0.72
         
 
 
@@ -224,6 +235,13 @@ transform Fl_exit_bg_move:
     parallel:
         ease 15.0 xalign 1.0
     repeat   
+
+
+transform Fl_from_about(y, t):
+    subpixel True
+    yoffset y
+    on show:
+        ease t yoffset 0.0   
 
 
 transform Fl_menu_move(z=1.0, y=0.5, yy=0, x=0.5):
@@ -1013,21 +1031,27 @@ transform Fl_screen_normal(l=2.0):
 
 transform Fl_preview_anim:
     contains:
-        "#00000000"
-        subpixel True
-        zoom 0.7 xalign 0.6 yalign 0.56 xoffset -50
-        pause 1.5
-        "images/preview/text.png" with ImageDissolve("images/move/Fl_effect_right.png", 1, alpha=True)
-        ease 0.7 xoffset 0
-    contains:
-        "images/preview/logo.png"
+        "images/preview/logo2.png"
         zoom 0.6 xalign 0.5 yalign 0.5 xanchor 0.5 yanchor 0.5 xoffset 0 subpixel True rotate 0 rotate_pad True
         ease 1.0 zoom 0.6 rotate 1440
-        pause 0.2
-        ease 0.7 xoffset -280
+        parallel:
+            ease 0.7 alpha 0.7 zoom 0.62
+            ease 0.7 alpha 1.0 zoom 0.6
+            repeat
 
 
-
+transform zoom_repeat(z, zz, zzz, t, tt, l, e):
+    subpixel True
+    align(0.5, 0.5)
+    alpha 0.0 zoom z
+    linear l alpha 1.0 zoom zz
+    parallel:
+        linear t alpha 1.0 zoom zzz
+        linear t alpha 0.0 zoom zz
+        linear t alpha 1.0 zoom zzz
+        pause tt
+        alpha 1.0 zoom zz
+        linear l alpha 0.0 zoom e
 
 
 

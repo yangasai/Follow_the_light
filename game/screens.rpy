@@ -115,8 +115,6 @@ screen Fl_autosave:
         text "Автосохранение" pos (0.722, 0.78) size 32:
             style "Fl_text_label"
             at Fl_alpha_ease_repeat(0.4, 1.0, 1.0)
-        #add "gui/loading/icon_as.png" pos (0.755, 0.81):
-            #at Fl_alpha_ease_repeat(0.6, 1.0, 1.0), Fl_full_rotate_repeat(2.0, 0.45, 1.0, 0.8)
     timer 3.5 action Hide("Fl_autosave")
 
 
@@ -152,32 +150,11 @@ screen Fl_podsk_dict:
 screen Fl_new_item(name, message):
     layer "front"
     fixed at Fl_new_item_move:
-        add "gui/overlays/Fl_new_item_frame.png" pos (-0.012, -0.01)
+        add "gui/overlay/Fl_new_item_frame.png" pos (-0.012, -0.01)
         add "gui/inventory/slots/" + name + "_idle.png"
         text message style "Fl_text_label" size 20 pos (0.05, 0.005) xanchor 0.0
         text Fl_items_dict[name] style "Fl_text_label" size 30 pos (0.05, 0.025) xanchor 0.0
     timer 5.0 action Hide("Fl_new_item")
-
-
-screen Fl_message(name, label, text, *args):
-    fixed at Fl_menu_move:
-        if args:
-            frame background Frame("gui/text_history/choice_box.png",50,50) xfill True yfill True yalign 0.5 left_padding 125 right_padding 125 bottom_padding 100 top_padding 100
-        else:
-            add "gui/overlays/Fl_message_ground.png"
-        if not args:
-            add "gui/overlays/obs_message_icon_" + name + ".png" yoffset (250 if args else 0)
-            add "gui/overlays/obs_message_layer.png" yoffset (250 if args else 0)
-        text label style "Fl_text_label" size 35 pos (0.51, 0.34) xanchor 0.5 yoffset (-300 if args else 0)
-        text text style "Fl_text_item_description" pos (0.1 if args else 0.35, 0.39) yoffset (-300 if args else 0) xsize (1600 if args else 600)
-        if args:
-            vbox pos (0.04, 0.11) spacing 14:
-                for item in args:
-                    text item style "Fl_text_item_description" color obs_white_color size 22 xsize 1800 text_align 0.0
-        imagebutton offset (1820 if args else 1255, 60 if args else 365):
-            hover_sound "gui/main_menu/Fl_click_menu.mp3"
-            auto "gui/inventory/exit2_%s.png"
-            action If(args, true=[Function(Obs.Hide.StatusInfo), Return()], false=[Show("obs_widget", _layer="front"), Return()])
 
 
 ################################################################################
@@ -399,17 +376,55 @@ style slider_vbox:
 
 #Экран о новелле/обнове
 screen about_bg:
-    tag menu
+    modal True
 
-    add "about_layer"
-    textbutton ["Назад"]:
-        hover_sound "gui/main_menu/Fl_click_menu.mp3"
-        text_style "Fl_text_big_save_load"
-        style "Fl_button_None"
-        text_size 50
-        xpos 100
-        ypos 1010
-        action [Hide("about", Dissolve(1.0)), Jump("before_main_menu")]
+    add "gui/choice.png" at Fl_alpha(0.8)
+    fixed yoffset 170 xoffset 635 at Fl_menu_move(0.91, 0.5, 0):
+            add "gui/main_menu/save/save_background.png"
+
+    frame at Fl_from_about(-1500, 0.5):
+        align (0.72, 0.29)
+
+        hbox:
+            spacing 10
+            add "images/preview/logo.png" at Fl_zoom_pr(0.32)
+            
+            vbox:
+                spacing 2
+
+                text "Coding:" xalign 0.0 size 50 font Fl_Script
+                text "ひきこもり" xalign 0.0 size 50
+
+    frame at Fl_from_about(-1500, 0.5):
+        align (0.925, 0.59)
+
+        vbox:
+            spacing 4
+
+            text "Погрузитесь в мир снов, где реальность и фантазия переплетаются в захватывающем тан-" xalign 0.0 size 24
+            text "це. Иногда сон — это не просто отдых. Это врата в неизведанное, где каждое мгновение" xalign 0.0 size 24
+            text "может стать началом новой истории. Но будьте осторожны! В этом загадочном месте реаль-" xalign 0.0 size 24
+            text "ность принимает неожиданные формы, и то, что кажется знакомым, может обернуться самым" xalign 0.0 size 24
+            text "страшным кошмаром. Что, если ваши самые глубокие страхи и желания начнут преследовать" xalign 0.0 size 24
+            text "вас? Каждый шаг по протоптанной дорожке может привести к неожиданным поворотам, зас-" xalign 0.0 size 24
+            text "таляя вас вновь и вновь сталкиваться с тем, что вы пытались забыть." xalign 0.0 size 24
+            text "Каждый сон — это новая возможность, а каждый кошмар — шанс на искупление." xalign 0.0 size 24
+
+
+    frame at Fl_from_about(-1500, 0.5):
+        align (0.96, 0.838)
+
+        text "Version 0.3.4" size 34 font Fl_Script
+
+    frame at Fl_from_about(-1500, 0.5):
+        align (0.47, 0.84)
+
+        textbutton ["Назад"] at Fl_menu_hover:
+            hover_sound "gui/main_menu/Fl_click_menu.mp3"
+            text_style "Fl_text_big_save_load"
+            style "Fl_button_None"
+            text_size 35
+            action [Hide("about_bg", Dissolve(0.25))]
 
 
 
@@ -479,9 +494,9 @@ screen confirm(message, yes_action, no_action):
 
     style_prefix "confirm"
 
-    add "gui/choice.png"
+    add "gui/choice.png" at Fl_at_dissolve(0.65, 0.5)
 
-    frame:
+    frame at Fl_at_dissolve(0.65, 0.5):
 
         vbox:
             xalign .5
@@ -535,16 +550,16 @@ screen skip_indicator():
     zorder 100
     style_prefix "skip"
 
-    frame:
+    add "Fl_prolog_dream" at Fl_alpha(0.15)
+    add "gui/quick_menu_zad.png"
 
-        hbox:
-            spacing 9
+    hbox:
+        align(0.5, 0.5)
+        spacing 9
 
-            text _("Пропуск")
-
-            text "▸" at delayed_blink(0.0, 1.0) style "skip_triangle"
-            text "▸" at delayed_blink(0.2, 1.0) style "skip_triangle"
-            text "▸" at delayed_blink(0.4, 1.0) style "skip_triangle"
+        text "▸" at delayed_blink(0.0, 1.0) size 110 style "skip_triangle"
+        text "▸" at delayed_blink(0.2, 1.0) size 110 style "skip_triangle"
+        text "▸" at delayed_blink(0.4, 1.0) size 110 style "skip_triangle"
 
 
 ## Эта трансформация используется, чтобы мигать стрелками одна за другой.

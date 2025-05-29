@@ -9,7 +9,18 @@ label splashscreen:
     scene bg Fl_black with Fl_dissolve2
 
     $ Fl.Pause(2.0)
+    scene layer:
+        subpixel True
+        truecenter
+        yalign 0.85
+        zoom 1.26
+        ease 8.5 yalign 0.1 zoom 1.0
+    with Fl_dissolve2
+    show text_1 at zoom_repeat(1.4, 1.0, 1.05, 1.35, 1.15, 0.25, 3.7)
+    $ Fl.Pause(5.4)
+    scene bg Fl_black with Fl_flash_fast
 
+    $ Fl.Pause(2.0)
 
     python:
         from time import localtime, strftime

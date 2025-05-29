@@ -83,6 +83,7 @@ init python:
     Fl_qu = Character(u'Королева', color="#FF0000", what_color="ffffff", font="font/Fl_font.ttf", drop_shadow = [ (2, 2) ], what_drop_shadow = [ (2, 2) ], what_drop_shadow_color = "#000")
     Fl_setk = Character(u'Кукловод', color="#faa600", what_color="ffffff", font="font/Fl_font.ttf", drop_shadow = [ (2, 2) ], what_drop_shadow = [ (2, 2) ], what_drop_shadow_color = "#000")
     Fl_tul = Character(u'Деформация', color="#d7e2f9", what_color="ffffff", font="font/Fl_font.ttf", drop_shadow = [ (2, 2) ], what_drop_shadow = [ (2, 2) ], what_drop_shadow_color = "#000")
+    Fl_ul34 = Character(u'Псионик', color="#f12016", what_color="ffffff", font="font/Fl_font.ttf", drop_shadow = [ (2, 2) ], what_drop_shadow = [ (2, 2) ], what_drop_shadow_color = "#000")
 
 
 
@@ -108,9 +109,6 @@ init:
 
     #ЗАГРУЗОЧНЫЙ ЭКРАН  
     image Fl_loading = "gui/loading/none.png"
-    image Fl_loading_q66 = "gui/loading/q66.png"
-    image icon = "gui/loading/icon.png"
-    image icon_q66 = "gui/loading/icon_q66.png"
 
 
     #FLASH
@@ -126,6 +124,7 @@ init:
     $ Fl_dspr = Dissolve(0.2)
     $ Fl_fast = Dissolve(0.5)
     $ Fl_dissolve1 = Dissolve(1.0)
+    $ Fl_dissolve1_5 = Dissolve(1.5)
     $ Fl_dissolve2 = Dissolve(2.0)
     $ Fl_dissolve3 = Dissolve(3.0)
     $ Fl_dissolve4 = Dissolve(4.0)
@@ -186,7 +185,6 @@ init:
 
 
     #СПЕЦАЛЬНЫЕ
-    image Fl_fogging = "special/Fl_fogging.png"
     image Fl_vignette = "special/Fl_vignette.png"
     image Fl_vignette2 = "special/Fl_vignette2.png"
     image Fl_vignette3 = "special/Fl_vignette3.png"
@@ -215,26 +213,6 @@ init:
         repeat
 
 
-    #МЕНЮ DLS
-    image Fl_dls_layer1 = "gui/main_menu/dls/Fl_dls_layer1.png"
-    image Fl_dls_layer2 = "gui/main_menu/dls/Fl_dls_layer2.png"
-    image Fl_dls_layer3 = "gui/main_menu/dls/Fl_dls_layer3.png"
-    image Fl_dls_layer4 = "gui/main_menu/dls/Fl_dls_layer4.png"
-
-
-    image bg Fl_menu_q66:
-        subpixel True
-        "Fl_dls_layer2" with Fl_dissolve2
-        pause(6)
-        "Fl_dls_layer1" with Fl_dissolve2
-        pause(5)
-        "Fl_dls_layer2" with Fl_dissolve2
-        pause(6)
-        "Fl_dls_layer1" with Fl_dissolve2
-        pause(5)
-        repeat
-
-
     #Загрузка
     image layer2 = "gui/main_menu/layer2.png"
     image layer3 = "gui/main_menu/layer3.png"
@@ -254,7 +232,6 @@ init:
         repeat
 
     #Экран о игре/обнове
-    image about_layer = "gui/about/about_layer.png"
     image update_layer = "gui/about/update_layer.png"
 
     #Настройки
@@ -610,6 +587,7 @@ init:
     image Fl_kitchen_gray = "objects/Fl_kitchen_gray.png"
     image Fl_kitchen_layer = "objects/Fl_kitchen_layer.png"
     image Fl_q_66_layer = "objects/Fl_q_66_layer.png"
+    image Fl_food = "objects/Fl_food.png"
 
     image kr_dream = "objects/kr_dream.png"
     image mi_dream = "objects/mi_dream.png"
@@ -635,6 +613,9 @@ init:
     image Fl_ext_house_of_mt_red = "effects/Fl_ext_house_of_mt_red.jpg"
     image Fl_int_house_of_mt_red = "effects/Fl_int_house_of_mt_red.jpg"
     image Fl_ext_camp_entrance_red = "effects/Fl_ext_camp_entrance_red.jpg"
+    image Fl_tunnel_blur = "effects/Fl_tunnel_blur.jpg"
+    image Fl_tunnel_blur2 = "effects/Fl_tunnel_blur2.jpg"
+    image Fl_mine_elevator_blur = "effects/Fl_mine_elevator_blur.jpg"
     image Fl_desolation = "effects/Fl_desolation.jpg"
     image Fl_desolation2 = "effects/Fl_desolation2.jpg"
     image Fl_desolation3 = "effects/Fl_desolation3.jpg"
@@ -647,6 +628,7 @@ init:
     image Fl_ext_square_day_glitch = "effects/Fl_ext_square_day_glitch.png"
     image Fl_ext_houses_day_sep = "effects/Fl_ext_houses_day_sep.png"
     image Fl_desolation_bl = "effects/Fl_desolation_bl.png"
+    image Fl_int_aidpost_night_lamplight2 = "effects/Fl_int_aidpost_night_lamplight2.png"
 
 
 
@@ -768,6 +750,7 @@ init:
 
 
     image Fl_unblink:
+        subpixel True
         contains:
             "Fl_blink_up"
             xalign 0 yalign 0
@@ -778,6 +761,7 @@ init:
             ease 1.5 pos (0,1080)
 
     image Fl_blink:
+        subpixel True
         contains:
             "Fl_blink_up"
             pos (0,-1080)
@@ -789,6 +773,7 @@ init:
 
 
     image Fl_blinking:
+        subpixel True
         contains:
             "Fl_blink_up"
             pos (0,-1080)
@@ -809,16 +794,18 @@ init:
 
 
     image Fl_music_effect:
+        subpixel True
         "Fl_vignette2" with Fl_dissolve1
         pause 3.0
-        "Fl_fogging" with Fl_dissolve1
+        "Fl_vignette" with Fl_dissolve1
         pause 3.0
         repeat
 
     image Fl_mute_effect:
+        subpixel True
         "Fl_vignette2" with Fl_dissolve1
         pause 2.0
-        "Fl_fogging" with Fl_dissolve1
+        "Fl_vignette" with Fl_dissolve1
         pause 2.0
         repeat
 
@@ -829,6 +816,7 @@ init:
 
 
     image bg Fl_blink_square_party:
+        subpixel True
         "bg Fl_ext_square_night_party" with Dissolve(0.2)
         pause 0.4
         "bg Fl_ext_square_night_party2" with Dissolve(0.2)
@@ -836,6 +824,7 @@ init:
         repeat
 
     image bg Fl_blink_square_party_2:
+        subpixel True
         "bg Fl_ext_square_night_party" with Dissolve(0.2)
         pause 0.2
         "bg Fl_ext_square_night_party2" with Dissolve(0.2)
@@ -843,6 +832,7 @@ init:
         repeat
 
     image bg Fl_blink_square_diskach1:
+        subpixel True
         "bg Fl_ext_square_night_party"
         pause .3
         "bg Fl_ext_square_night_party2"
@@ -861,6 +851,7 @@ init:
         pause 0.2
 
     image bg Fl_blink_square_diskach2:
+        subpixel True
         "bg Fl_ext_square_night_party"
         pause 0.6
         "bg Fl_ext_square_night_party2"
@@ -872,6 +863,7 @@ init:
         repeat
 
     image Fl_desolation_anim:
+        subpixel True
         "Fl_desolation"
         3.0
         "Fl_desolation2"
@@ -883,6 +875,15 @@ init:
         "Fl_desolation3"
         0.1
         "Fl_desolation"
+        repeat
+
+
+    image Fl_tunnel_anim:
+        subpixel True
+        "Fl_tunnel_blur" with Fl_dissolve1
+        1.0
+        "Fl_tunnel_blur2" with Fl_dissolve1
+        0.5
         repeat
 
 
@@ -913,6 +914,15 @@ init:
     image bg Fl_moon_red2 = "bg/real_word/Fl_moon_red2.jpg"
     image bg Fl_ext_khruschevka_night = "bg/real_word/Fl_ext_khruschevka_night.jpg"
     image bg Fl_ext_street_night_vos = "bg/real_word/Fl_ext_street_night_vos.jpg"
+
+
+    #БГ Пустоты
+    image bg Fl_black_flash = "bg/space/Fl_black_flash.jpg"
+    image bg Fl_black_flash2 = "bg/space/Fl_black_flash2.jpg"
+    image bg Fl_pyst = "bg/space/Fl_pyst.jpg"
+    image bg Fl_pyst_ch = "bg/space/Fl_pyst_ch.jpg"
+    image bg Fl_pyst_red = "bg/space/Fl_pyst_red.jpg"
+    image bg Fl_pyst_red_nightmare = "bg/space/Fl_pyst_red_nightmare.jpg"
 
 
     #БГ ЛАГЕРЬ(Убийства)
@@ -1038,6 +1048,7 @@ init:
     image bg Fl_int_house_yan_day = "bg/Fl_int_house_yan_day.jpg"
     image bg Fl_int_house_yan_night = "bg/Fl_int_house_yan_night.jpg"
     image bg Fl_sky = "bg/Fl_sky.jpg"
+    image bg Fl_hor_les_obr1 = "bg/Fl_hor_les_obr1.jpg"
     image bg Fl_mine_elevator_down = "bg/Fl_mine_elevator_down.jpg"
     image bg Fl_mine_elevator_up = "bg/Fl_mine_elevator_up.jpg"
     image bg Fl_int_laboratory = "bg/Fl_int_laboratory.jpg"
@@ -1112,18 +1123,13 @@ init:
     image bg Fl_ext_path2_night = "bg/Fl_ext_path2_night.jpg"
     image bg Fl_ext_square_night = "bg/Fl_ext_square_night.jpg"
     image bg Fl_ext_square_night2 = "bg/Fl_ext_square_night2.jpg"
+    image bg Fl_koridor_ma_son_obr = "bg/Fl_koridor_ma_son_obr.jpg"
     image bg Fl_int_house_of_mt_night2 = "bg/Fl_int_house_of_mt_night2.jpg"
     image bg Fl_ext_house_of_mt_night_without_light = "bg/Fl_ext_house_of_mt_night_without_light.jpg"
     image bg Fl_underwater = "bg/Fl_underwater.jpg"
     image bg Fl_underwater2 = "bg/Fl_underwater2.jpg"
     image bg Fl_underwater3 = "bg/Fl_underwater3.jpg"
     image bg Fl_int_musclub_day = "bg/Fl_int_musclub_day.jpg"
-    image bg Fl_pyst = "bg/Fl_pyst.jpg"
-    image bg Fl_black_flash = "bg/Fl_black_flash.jpg"
-    image bg Fl_black_flash2 = "bg/Fl_black_flash2.jpg"
-    image bg Fl_pyst_ch = "bg/Fl_pyst_ch.jpg"
-    image bg Fl_pyst_red = "bg/Fl_pyst_red.jpg"
-    image bg Fl_pyst_red_nightmare = "bg/Fl_pyst_red_nightmare.jpg"
     image bg Fl_int_house_of_sl_day = "bg/Fl_int_house_of_sl_day.jpg"
     image bg Fl_ext_house_of_sl_day = "bg/Fl_ext_house_of_sl_day.jpg"
     image bg Fl_ext_path2_dark = "bg/Fl_ext_path2_dark.jpg"
@@ -1150,6 +1156,7 @@ init:
     image bg Fl_ext_bus_red = "bg/Fl_ext_bus_red.jpg"
     image bg Fl_palata_loner = "bg/Fl_palata_loner.jpg"
     image bg Fl_bynker = "bg/Fl_bynker.jpg"
+    image bg Fl_bynker_dark = "bg/Fl_bynker_dark.jpg"
     image bg Fl_bynker_pr = "bg/Fl_bynker_pr.jpg"
     image bg Fl_bynker_light = "bg/Fl_bynker_light.jpg"
     image bg Fl_bynker_light_no_door = "bg/Fl_bynker_light_no_door.jpg"
@@ -1170,13 +1177,13 @@ init:
     image bg Fl_ext_un_hideout_night = "bg/Fl_ext_un_hideout_night.jpg"
     image bg Fl_ext_platform_train = "bg/Fl_ext_platform_train.jpg"
     image bg Fl_int_medstation_zombie = "bg/Fl_int_medstation_zombie.jpg"
+    image bg Fl_int_infirmary = "bg/Fl_int_infirmary.jpg"
     image bg Fl_int_shower = "bg/Fl_int_shower.png"
     image bg Fl_int_shower_light = "bg/Fl_int_shower_light.png"
     image bg Fl_int_shower_no_light = "bg/Fl_int_shower_no_light.png"
     image bg Fl_int_shower_no_light2 = "bg/Fl_int_shower_no_light2.png"
     image bg Fl_int_house_sn_vk_night = "bg/Fl_int_house_sn_vk_night.png"
     image bg Fl_ext_house_gr_night = "bg/Fl_ext_house_gr_night.png"
-
 
 
 
@@ -1245,6 +1252,7 @@ init:
     image cg Fl_pioneer_falling = "cg/dls_loner/Fl_pioneer_falling.png"
     image cg Fl_pioneer_falling2 = "cg/dls_loner/Fl_pioneer_falling2.png"
     image cg Fl_mine_fint = "cg/dls_loner/Fl_mine_fint.png"
+    image cg Fl_nekto = "cg/dls_loner/Fl_nekto.png"
     image cg Fl_mik = "cg/dls_loner/Fl_mik.png"
     image cg Fl_bloodsquare = "cg/dls_loner/Fl_bloodsquare.png"
     image cg Fl_bloodsquare2 = "cg/dls_loner/Fl_bloodsquare2.jpg"
@@ -1266,6 +1274,10 @@ init:
     image cg Fl_forest_zombie = "cg/dls_loner/Fl_forest_zombie.jpg"
     image cg Fl_loner_lena = "cg/dls_loner/Fl_loner_lena.jpg"
     image cg Fl_mi_dark = "cg/dls_loner/Fl_mi_dark.jpg"
+    image cg Fl_mi_gost = "cg/dls_loner/Fl_mi_gost.jpg"
+    image cg Fl_mi_gost2 = "cg/dls_loner/Fl_mi_gost2.jpg"
+    image cg Fl_mi_gost3 = "cg/dls_loner/Fl_mi_gost3.jpg"
+    image cg Fl_mi_gost4 = "cg/dls_loner/Fl_mi_gost4.jpg"
     
 
 
@@ -1363,7 +1375,15 @@ init -15:
         $ persistent.Fl_photo_pallery_29 == False
     if persistent.Fl_photo_pallery_30 == None:
         $ persistent.Fl_photo_pallery_30 == False
-
+    if persistent.Fl_photo_pallery_31 == None:
+        $ persistent.Fl_photo_pallery_31 == False
+    if persistent.Fl_photo_pallery_32 == None:
+        $ persistent.Fl_photo_pallery_32 == False
+    if persistent.Fl_photo_pallery_33 == None:
+        $ persistent.Fl_photo_pallery_33 == False
+    if persistent.Fl_photo_pallery_34 == None:
+        $ persistent.Fl_photo_pallery_34 == False
+    
 
 
     #Достижения
@@ -1427,9 +1447,6 @@ init -15:
         $ persistent.Fl_dictionary_16 == False
     if persistent.Fl_dictionary_17 == None:
         $ persistent.Fl_dictionary_17 == False
-
-
-
 
 
 

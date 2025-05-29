@@ -2066,10 +2066,14 @@ init 10:
 
     #Ульяна(Пионер_1)
     image us pioner grin = Fl.SpritesReg('us',['us_1_body', 'us_1_pioneer', 'us_1_grin'],size = "normal")
+    image us pioner yawn = Fl.SpritesReg('us',['us_1_body', 'us_1_pioneer', 'us_1_yawn'],size = "normal")
     image us pioner laugh = Fl.SpritesReg('us',['us_1_body', 'us_1_pioneer', 'us_1_laugh'],size = "normal")
     image us pioner laugh2 = Fl.SpritesReg('us',['us_1_body', 'us_1_pioneer', 'us_1_laugh2'],size = "normal")
     image us pioner normal = Fl.SpritesReg('us',['us_1_body', 'us_1_pioneer', 'us_1_normal'],size = "normal")
     image us pioner smile = Fl.SpritesReg('us',['us_1_body', 'us_1_pioneer', 'us_1_smile'],size = "normal")
+    image us pioner sad = Fl.SpritesReg('us',['us_1_body', 'us_1_pioneer', 'us_1_sad'],size = "normal")
+    image us pioner sad smile = Fl.SpritesReg('us',['us_1_body', 'us_1_pioneer', 'us_1_sad_smile'],size = "normal")
+    image us pioner cry = Fl.SpritesReg('us',['us_1_body', 'us_1_pioneer', 'us_1_cry'],size = "normal")
 
 
     #Ульяна(Пионер_1)
@@ -2077,14 +2081,19 @@ init 10:
     image us pioner2 calml = Fl.SpritesReg('us',['us_2_body', 'us_2_pioneer', 'us_2_calml'],size = "normal")
     image us pioner2 dontlike = Fl.SpritesReg('us',['us_2_body', 'us_2_pioneer', 'us_2_dontlike'],size = "normal")
     image us pioner2 fear = Fl.SpritesReg('us',['us_2_body', 'us_2_pioneer', 'us_2_fear'],size = "normal")
+    image us pioner2 upset = Fl.SpritesReg('us',['us_2_body', 'us_2_pioneer', 'us_2_upset'],size = "normal")
 
 
     #Ульяна(Футболке_1)
     image us ussr grin = Fl.SpritesReg('us',['us_1_body', 'us_1_sport', 'us_1_grin'],size = "normal")
+    image us ussr yawn = Fl.SpritesReg('us',['us_1_body', 'us_1_sport', 'us_1_yawn'],size = "normal")
     image us ussr laugh = Fl.SpritesReg('us',['us_1_body', 'us_1_sport', 'us_1_laugh'],size = "normal")
     image us ussr laugh2 = Fl.SpritesReg('us',['us_1_body', 'us_1_sport', 'us_1_laugh2'],size = "normal")
     image us ussr normal = Fl.SpritesReg('us',['us_1_body', 'us_1_sport', 'us_1_normal'],size = "normal")
     image us ussr smile = Fl.SpritesReg('us',['us_1_body', 'us_1_sport', 'us_1_smile'],size = "normal")
+    image us ussr sad = Fl.SpritesReg('us',['us_1_body', 'us_1_sport', 'us_1_sad'],size = "normal")
+    image us ussr sad smile = Fl.SpritesReg('us',['us_1_body', 'us_1_sport', 'us_1_sad_smile'],size = "normal")
+    image us ussr cry = Fl.SpritesReg('us',['us_1_body', 'us_1_sport', 'us_1_cry'],size = "normal")
 
 
     #Ульяна(Футболке_2)
@@ -2092,6 +2101,7 @@ init 10:
     image us ussr2 calml = Fl.SpritesReg('us',['us_2_body', 'us_2_sport', 'us_2_calml'],size = "normal")
     image us ussr2 dontlike = Fl.SpritesReg('us',['us_2_body', 'us_2_sport', 'us_2_dontlike'],size = "normal")
     image us ussr2 fear = Fl.SpritesReg('us',['us_2_body', 'us_2_sport', 'us_2_fear'],size = "normal")
+    image us ussr2 upset = Fl.SpritesReg('us',['us_2_body', 'us_2_sport', 'us_2_upset'],size = "normal")
 
 
 

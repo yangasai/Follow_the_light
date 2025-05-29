@@ -1,7 +1,6 @@
 # -*- coding: ひきこもり -*-
 init python:
     Fl_Script                                         = "font/Fl_mainmenu.ttf"
-    Fl_dls                                         = "font/Fl_dls.ttf"
 
     style.Fl_imagemap                                            = Style(style.default)
     style.Fl_imagemap.hover_sound                                = "gui/main_menu/Fl_click_menu.mp3"
@@ -53,13 +52,6 @@ init python:
     style.Fl_text_setting_s.selected_color                 = "#FFFFFF"
     style.Fl_text_setting_s.outlines                       = [(1, "#000000", 0, 0)]
 
-    style.Fl_text_setting_dls_s                                = Style(style.default)
-    style.Fl_text_setting_dls_s.font                           = "font/Fl_dls.ttf"
-    style.Fl_text_setting_dls_s.size                           = 35
-    style.Fl_text_setting_dls_s.color                          = "#808080"
-    style.Fl_text_setting_dls_s.hover_color                    = "#FFFFFF"
-    style.Fl_text_setting_dls_s.selected_color                 = "#FFFFFF"
-    style.Fl_text_setting_dls_s.outlines                       = [(1, "#000000", 0, 0)]
 
     style.Fl_text_setting_sl                                = Style(style.default)
     style.Fl_text_setting_sl.font                           = "font/Fl_font.ttf"
@@ -122,7 +114,7 @@ init python:
     style.Fl_loading_bar.right_bar                               = Frame("gui/loading/bar_null.png")
     style.Fl_loading_bar.thumb                                   = None
     style.Fl_loading_bar.thumb_offset                            = 0
-    style.Fl_loading_bar.maximum                                 = (650, 54)
+    style.Fl_loading_bar.maximum                                 = (550, 40)
 
     style.Fl_text_item_label                                 = Style(style.default)
     style.Fl_text_item_label.font                            = "font/Fl_mainmenu.ttf"

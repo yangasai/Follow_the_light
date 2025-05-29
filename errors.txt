@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 768: u'Fl_leftside_podsk' is not a keyword argument or valid child for the text statement.
-    Fl_leftside_podsk
-                     ^
+File "game/config/Fl_main_menu.rpy", line 500: text expects a non-empty block.
+    text "{font=[Fl_Script]}{size=60}1/4{/size}{/font}":
+                                                        ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Fri Apr 12 01:16:42 2024
+Wed May 28 12:29:53 2025
